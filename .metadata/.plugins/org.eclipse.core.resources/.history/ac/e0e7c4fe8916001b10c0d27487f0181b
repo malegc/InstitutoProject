@@ -1,0 +1,122 @@
+package guis;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.UIManager;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Home extends JFrame implements ActionListener {
+	private JMenuBar menuBar;
+	private JMenu mnArchivo;
+	private JMenu mnMantenimiento;
+	private JMenu mnRegistro;
+	private JMenu mnConsulta;
+	private JMenu mnReporte;
+	private JMenuItem mntmSalir;
+	private JMenuItem mntmAlumno;
+	private JMenuItem mntmCurso;
+	private JMenuItem mntmMatricula;
+	private JMenuItem mntmRetiro;
+	private JMenuItem mntmAlumnosCursos;
+	private JMenuItem mntmMatrículasRetiros;
+	private JMenuItem mntmAlmnMatriculaPendiente;
+	private JMenuItem mntmAlmnMatriculaVigente;
+	private JMenuItem mntmAlmnMatriculadosPorCurso;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Home frame = new Home();
+					frame.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Home() {
+		setResizable(false);
+		setTitle("Instituto Tecnologico");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 650, 350);
+		
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		mnArchivo = new JMenu("Archivo");
+		menuBar.add(mnArchivo);
+		
+		mntmSalir = new JMenuItem("Salir");
+		mntmSalir.addActionListener(this);
+		mnArchivo.add(mntmSalir);
+		
+		mnMantenimiento = new JMenu("Mantenimiento");
+		menuBar.add(mnMantenimiento);
+		
+		mntmAlumno = new JMenuItem("Alumno");
+		mnMantenimiento.add(mntmAlumno);
+		
+		mntmCurso = new JMenuItem("Curso");
+		mnMantenimiento.add(mntmCurso);
+		
+		mnRegistro = new JMenu("Registro");
+		menuBar.add(mnRegistro);
+		
+		mntmMatricula = new JMenuItem("Matr\u00EDcula");
+		mnRegistro.add(mntmMatricula);
+		
+		mntmRetiro = new JMenuItem("Retiro");
+		mnRegistro.add(mntmRetiro);
+		
+		mnConsulta = new JMenu("Consulta");
+		menuBar.add(mnConsulta);
+		
+		mntmAlumnosCursos = new JMenuItem("Alumnos y cursos");
+		mnConsulta.add(mntmAlumnosCursos);
+		
+		mntmMatrículasRetiros = new JMenuItem("Matr\u00EDculas y retiros");
+		mnConsulta.add(mntmMatrículasRetiros);
+		
+		mnReporte = new JMenu("Reporte");
+		menuBar.add(mnReporte);
+		
+		mntmAlmnMatriculaPendiente = new JMenuItem("Alumnos con matr\u00EDcula pendiente");
+		mnReporte.add(mntmAlmnMatriculaPendiente);
+		
+		mntmAlmnMatriculaVigente = new JMenuItem("Alumnos con matr\u00EDcula vigente");
+		mnReporte.add(mntmAlmnMatriculaVigente);
+		
+		mntmAlmnMatriculadosPorCurso = new JMenuItem("Alumnos matriculados por curso");
+		mnReporte.add(mntmAlmnMatriculadosPorCurso);
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmSalir) {
+			actionPerformedMntmSalir(e);
+		}
+	}
+	protected void actionPerformedMntmSalir(ActionEvent e) {
+		System.exit(0);
+	}
+}

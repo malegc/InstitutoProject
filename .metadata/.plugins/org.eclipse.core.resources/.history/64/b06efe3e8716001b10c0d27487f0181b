@@ -1,0 +1,74 @@
+package guis;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.UIManager;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+public class Home extends JFrame {
+	private JMenuBar menuBar;
+	private JMenu mnArchivo;
+	private JMenu mnMantenimiento;
+	private JMenu mnRegistro;
+	private JMenu mnConsulta;
+	private JMenu mnReporte;
+	private JMenuItem mntmSalir;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Home frame = new Home();
+					frame.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Home() {
+		setTitle("Instituto Tecnologico");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 650, 350);
+		
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		mnArchivo = new JMenu("Archivo");
+		menuBar.add(mnArchivo);
+		
+		mntmSalir = new JMenuItem("Salir");
+		mnArchivo.add(mntmSalir);
+		
+		mnMantenimiento = new JMenu("Mantenimiento");
+		menuBar.add(mnMantenimiento);
+		
+		mnRegistro = new JMenu("Registro");
+		menuBar.add(mnRegistro);
+		
+		mnConsulta = new JMenu("Consulta");
+		menuBar.add(mnConsulta);
+		
+		mnReporte = new JMenu("Reporte");
+		menuBar.add(mnReporte);
+	}
+}
