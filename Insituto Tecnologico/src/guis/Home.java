@@ -76,9 +76,11 @@ public class Home extends JFrame implements ActionListener {
 		menuBar.add(mnMantenimiento);
 		
 		mntmAlumno = new JMenuItem("Alumno");
+		mntmAlumno.addActionListener(this);
 		mnMantenimiento.add(mntmAlumno);
 		
 		mntmCurso = new JMenuItem("Curso");
+		mntmCurso.addActionListener(this);
 		mnMantenimiento.add(mntmCurso);
 		
 		mnRegistro = new JMenu("Registro");
@@ -112,6 +114,12 @@ public class Home extends JFrame implements ActionListener {
 		mnReporte.add(mntmAlmnMatriculadosPorCurso);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmCurso) {
+			actionPerformedMntmCurso(e);
+		}
+		if (e.getSource() == mntmAlumno) {
+			actionPerformedMntmAlumno(e);
+		}
 		if (e.getSource() == mntmSalir) {
 			actionPerformedMntmSalir(e);
 		}
@@ -119,4 +127,15 @@ public class Home extends JFrame implements ActionListener {
 	protected void actionPerformedMntmSalir(ActionEvent e) {
 		dispose();
 	}
+	protected void actionPerformedMntmAlumno(ActionEvent e) {
+		Man_Alumno ma = new Man_Alumno();
+		ma.setLocationRelativeTo(this);
+		ma.setVisible(true);
+	}
+	protected void actionPerformedMntmCurso(ActionEvent e) {
+		Man_Curso mc = new Man_Curso();
+		mc.setLocationRelativeTo(this);
+		mc.setVisible(true);
+	}
+	
 }

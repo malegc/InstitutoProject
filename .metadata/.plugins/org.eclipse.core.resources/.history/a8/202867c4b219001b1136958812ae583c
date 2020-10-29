@@ -1,0 +1,78 @@
+package guis;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+
+public class Man_Alumno extends JDialog {
+	private JLabel lblcodAlumno;
+	private JTextField txtcodAlumno;
+	private JLabel lblNomAlumno;
+	private JLabel lblApeAlumno;
+	private JTextField txtNomAlumno;
+	private JTextField txtApeAlumno;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Man_Alumno dialog = new Man_Alumno();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Man_Alumno() {
+		setTitle("Mantenimiento | Alumno");
+		setBounds(100, 100, 530, 320);
+		getContentPane().setLayout(null);
+		
+		lblcodAlumno = new JLabel("Codigo");
+		lblcodAlumno.setBounds(10, 11, 46, 14);
+		getContentPane().add(lblcodAlumno);
+		
+		txtcodAlumno = new JTextField();
+		txtcodAlumno.setEditable(false);
+		txtcodAlumno.setBounds(66, 8, 86, 20);
+		getContentPane().add(txtcodAlumno);
+		txtcodAlumno.setColumns(10);
+		
+		lblNomAlumno = new JLabel("Nombres");
+		lblNomAlumno.setBounds(10, 36, 46, 14);
+		getContentPane().add(lblNomAlumno);
+		
+		lblApeAlumno = new JLabel("Apellidos");
+		lblApeAlumno.setBounds(10, 61, 46, 14);
+		getContentPane().add(lblApeAlumno);
+		
+		txtNomAlumno = new JTextField();
+		txtNomAlumno.setBounds(66, 33, 217, 20);
+		getContentPane().add(txtNomAlumno);
+		txtNomAlumno.setColumns(10);
+		
+		txtApeAlumno = new JTextField();
+		txtApeAlumno.setBounds(66, 58, 217, 20);
+		getContentPane().add(txtApeAlumno);
+		txtApeAlumno.setColumns(10);
+
+	}
+}
