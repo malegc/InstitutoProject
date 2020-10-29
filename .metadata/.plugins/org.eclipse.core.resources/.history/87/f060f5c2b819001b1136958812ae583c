@@ -152,7 +152,7 @@ public class Home extends JFrame implements ActionListener {
 		rm.setVisible(true);
 	}
 	protected void actionPerformedMntmRetiro(ActionEvent e) {
-		Reg_Retiro rr = new Reg_Retiro();
+		Reg_Retiro rm = new Reg_Retiro();
 		rr.setLocationRelativeTo(this);
 		rr.setVisible(true);
 	}
