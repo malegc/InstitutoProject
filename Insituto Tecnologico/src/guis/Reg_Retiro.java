@@ -15,6 +15,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
 public class Reg_Retiro extends JDialog implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblCodigoRetiro;
 	private JTextField txtCodigoRetiro;
 	private JButton btnAdicionar_Retiro;
@@ -24,9 +28,9 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 	private JTextField txtHora;
 	private JButton btnConsultar_Retiro;
 	private JLabel lblCodigoAlumno;
-	private JComboBox cboCodAlumno;
+	private JComboBox <String> cboCodAlumno;
 	private JLabel lblCursoMatri;
-	private JComboBox comboBox;
+	private JComboBox <String> cboCurso;
 	private JButton btnModificar_Retiro;
 	private JButton btnEliminar_Retiro;
 	private JScrollPane scrollPane;
@@ -107,7 +111,7 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 		lblCodigoAlumno.setBounds(10, 57, 61, 14);
 		getContentPane().add(lblCodigoAlumno);
 		
-		cboCodAlumno = new JComboBox();
+		cboCodAlumno = new JComboBox <String> ();
 		cboCodAlumno.setBounds(76, 53, 119, 22);
 		getContentPane().add(cboCodAlumno);
 		
@@ -115,10 +119,10 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 		lblCursoMatri.setBounds(10, 82, 46, 14);
 		getContentPane().add(lblCursoMatri);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Matem\u00E1tica II", "Base de Datos"}));
-		comboBox.setBounds(76, 78, 119, 22);
-		getContentPane().add(comboBox);
+		cboCurso = new JComboBox <String> ();
+		cboCurso.setModel(new DefaultComboBoxModel <String> (new String[] {"Matem\u00E1tica II", "Base de Datos"}));
+		cboCurso.setBounds(76, 78, 119, 22);
+		getContentPane().add(cboCurso);
 		
 		btnModificar_Retiro = new JButton("Modificar");
 		btnModificar_Retiro.addActionListener(this);

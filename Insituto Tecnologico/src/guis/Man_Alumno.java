@@ -13,6 +13,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Man_Alumno extends JDialog implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblcodAlumno;
 	private JTextField txtcodAlumno;
 	private JLabel lblNomAlumno;

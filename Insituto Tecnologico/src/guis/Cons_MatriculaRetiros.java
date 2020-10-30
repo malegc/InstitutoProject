@@ -10,6 +10,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class Cons_MatriculaRetiros extends JDialog {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblNumeroMatricula;
 	private JTextField txtNumMatricula;
 	private JLabel lblNumeroDeRetiro;

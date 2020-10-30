@@ -7,6 +7,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class Repo_AlmnMatriculaPendiente extends JDialog {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JScrollPane scrollPane;
 	private JTextArea txtS;
 

@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Reg_Matricula extends JDialog implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblCodigo;
 	private JTextField txtCodigoMAtri;
 	private JLabel lblFecha;
@@ -24,10 +28,10 @@ public class Reg_Matricula extends JDialog implements ActionListener {
 	private JButton btnConsultar_Matricula;
 	private JButton btnModificar_Matricula;
 	private JLabel lblCursoMatri;
-	private JComboBox comboBox;
+	private JComboBox <String> cboCurso;
 	private JButton btnAdicionar_Matricula;
 	private JLabel lblNewLabel;
-	private JComboBox cboCodAlumno;
+	private JComboBox <String> cboCodAlumno;
 	private JScrollPane scrollPane;
 	private JTable tblMatricula;
 	private JButton btnEliminar_Matricula;
@@ -108,10 +112,10 @@ public class Reg_Matricula extends JDialog implements ActionListener {
 		lblCursoMatri.setBounds(10, 86, 46, 14);
 		getContentPane().add(lblCursoMatri);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Matem\u00E1tica II", "Base de datos"}));
-		comboBox.setBounds(81, 82, 119, 22);
-		getContentPane().add(comboBox);
+		cboCurso = new JComboBox <String> ();
+		cboCurso.setModel(new DefaultComboBoxModel <String> (new String[] {"Matem\u00E1tica II", "Base de datos"}));
+		cboCurso.setBounds(81, 82, 119, 22);
+		getContentPane().add(cboCurso);
 		
 		btnAdicionar_Matricula = new JButton("Adicionar");
 		btnAdicionar_Matricula.addActionListener(this);
@@ -122,7 +126,7 @@ public class Reg_Matricula extends JDialog implements ActionListener {
 		lblNewLabel.setBounds(10, 61, 61, 14);
 		getContentPane().add(lblNewLabel);
 		
-		cboCodAlumno = new JComboBox();
+		cboCodAlumno = new JComboBox <String> ();
 		cboCodAlumno.setBounds(81, 57, 119, 22);
 		getContentPane().add(cboCodAlumno);
 		
