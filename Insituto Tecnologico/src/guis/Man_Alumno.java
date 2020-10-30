@@ -117,14 +117,17 @@ public class Man_Alumno extends JDialog implements ActionListener {
 		getContentPane().add(btnAdicionar_Alumno);
 		
 		btnConsultar_Alumno = new JButton("Consultar");
+		btnConsultar_Alumno.addActionListener(this);
 		btnConsultar_Alumno.setBounds(415, 32, 89, 23);
 		getContentPane().add(btnConsultar_Alumno);
 		
 		btnModificar_Alumno = new JButton("Modificar");
+		btnModificar_Alumno.addActionListener(this);
 		btnModificar_Alumno.setBounds(415, 57, 89, 23);
 		getContentPane().add(btnModificar_Alumno);
 		
 		btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(this);
 		btnEliminar.setBounds(415, 82, 89, 23);
 		getContentPane().add(btnEliminar);
 		
@@ -150,10 +153,25 @@ public class Man_Alumno extends JDialog implements ActionListener {
 
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar) {
+			actionPerformedBtnEliminar(e);
+		}
+		if (e.getSource() == btnModificar_Alumno) {
+			actionPerformedBtnModificar_Alumno(e);
+		}
+		if (e.getSource() == btnConsultar_Alumno) {
+			actionPerformedBtnConsultar_Alumno(e);
+		}
 		if (e.getSource() == btnAdicionar_Alumno) {
 			actionPerformedBtnAdicionar_Alumno(e);
 		}
 	}
 	protected void actionPerformedBtnAdicionar_Alumno(ActionEvent e) {
+	}
+	protected void actionPerformedBtnConsultar_Alumno(ActionEvent e) {
+	}
+	protected void actionPerformedBtnModificar_Alumno(ActionEvent e) {
+	}
+	protected void actionPerformedBtnEliminar(ActionEvent e) {
 	}
 }

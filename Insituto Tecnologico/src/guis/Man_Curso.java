@@ -9,8 +9,10 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Man_Curso extends JDialog {
+public class Man_Curso extends JDialog implements ActionListener {
 	private JLabel lblCodCurso;
 	private JTextField txtCodCurso;
 	private JLabel lblAsignaturaCurso;
@@ -112,18 +114,22 @@ public class Man_Curso extends JDialog {
 		getContentPane().add(btnGuardar_Curso);
 		
 		btnAdicionar_Curso = new JButton("Adicionar");
+		btnAdicionar_Curso.addActionListener(this);
 		btnAdicionar_Curso.setBounds(420, 7, 89, 23);
 		getContentPane().add(btnAdicionar_Curso);
 		
 		btnConsultar_Curso = new JButton("Consultar");
+		btnConsultar_Curso.addActionListener(this);
 		btnConsultar_Curso.setBounds(420, 32, 89, 23);
 		getContentPane().add(btnConsultar_Curso);
 		
 		btnModificar_Curso = new JButton("Modificar");
+		btnModificar_Curso.addActionListener(this);
 		btnModificar_Curso.setBounds(420, 57, 89, 23);
 		getContentPane().add(btnModificar_Curso);
 		
 		btnEliminar_Curso = new JButton("Eliminar");
+		btnEliminar_Curso.addActionListener(this);
 		btnEliminar_Curso.setBounds(420, 82, 89, 23);
 		getContentPane().add(btnEliminar_Curso);
 		
@@ -136,4 +142,26 @@ public class Man_Curso extends JDialog {
 
 	}
 
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar_Curso) {
+			actionPerformedBtnEliminar_Curso(e);
+		}
+		if (e.getSource() == btnModificar_Curso) {
+			actionPerformedBtnModificar_Curso(e);
+		}
+		if (e.getSource() == btnConsultar_Curso) {
+			actionPerformedBtnConsultar_Curso(e);
+		}
+		if (e.getSource() == btnAdicionar_Curso) {
+			actionPerformedBtnAdicionar_Curso(e);
+		}
+	}
+	protected void actionPerformedBtnAdicionar_Curso(ActionEvent e) {
+	}
+	protected void actionPerformedBtnConsultar_Curso(ActionEvent e) {
+	}
+	protected void actionPerformedBtnModificar_Curso(ActionEvent e) {
+	}
+	protected void actionPerformedBtnEliminar_Curso(ActionEvent e) {
+	}
 }

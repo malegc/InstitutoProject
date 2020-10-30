@@ -11,8 +11,10 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Reg_Matricula extends JDialog {
+public class Reg_Matricula extends JDialog implements ActionListener {
 	private JLabel lblCodigo;
 	private JTextField txtCodigoMAtri;
 	private JLabel lblFecha;
@@ -93,10 +95,12 @@ public class Reg_Matricula extends JDialog {
 		txtHora.setColumns(10);
 		
 		btnConsultar_Matricula = new JButton("Consultar");
+		btnConsultar_Matricula.addActionListener(this);
 		btnConsultar_Matricula.setBounds(425, 32, 89, 23);
 		getContentPane().add(btnConsultar_Matricula);
 		
 		btnModificar_Matricula = new JButton("Modificar");
+		btnModificar_Matricula.addActionListener(this);
 		btnModificar_Matricula.setBounds(425, 57, 89, 23);
 		getContentPane().add(btnModificar_Matricula);
 		
@@ -110,6 +114,7 @@ public class Reg_Matricula extends JDialog {
 		getContentPane().add(comboBox);
 		
 		btnAdicionar_Matricula = new JButton("Adicionar");
+		btnAdicionar_Matricula.addActionListener(this);
 		btnAdicionar_Matricula.setBounds(425, 7, 89, 23);
 		getContentPane().add(btnAdicionar_Matricula);
 		
@@ -129,8 +134,31 @@ public class Reg_Matricula extends JDialog {
 		scrollPane.setViewportView(tblMatricula);
 		
 		btnEliminar_Matricula = new JButton("Eliminar");
+		btnEliminar_Matricula.addActionListener(this);
 		btnEliminar_Matricula.setBounds(425, 82, 89, 23);
 		getContentPane().add(btnEliminar_Matricula);
 
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar_Matricula) {
+			actionPerformedBtnEliminar_Matricula(e);
+		}
+		if (e.getSource() == btnModificar_Matricula) {
+			actionPerformedBtnModificar_Matricula(e);
+		}
+		if (e.getSource() == btnConsultar_Matricula) {
+			actionPerformedBtnConsultar_Matricula(e);
+		}
+		if (e.getSource() == btnAdicionar_Matricula) {
+			actionPerformedBtnAdicionar_Matricula(e);
+		}
+	}
+	protected void actionPerformedBtnAdicionar_Matricula(ActionEvent e) {
+	}
+	protected void actionPerformedBtnConsultar_Matricula(ActionEvent e) {
+	}
+	protected void actionPerformedBtnModificar_Matricula(ActionEvent e) {
+	}
+	protected void actionPerformedBtnEliminar_Matricula(ActionEvent e) {
 	}
 }

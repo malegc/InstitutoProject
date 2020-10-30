@@ -1,0 +1,36 @@
+package guis;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+
+public class Repo_AlmnMatriculaVigente extends JDialog {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Repo_AlmnMatriculaVigente dialog = new Repo_AlmnMatriculaVigente();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Repo_AlmnMatriculaVigente() {
+		setTitle("Reporte | Alumnos con matr\u00EDcula vigente:");
+		setBounds(100, 100, 450, 300);
+
+	}
+
+}

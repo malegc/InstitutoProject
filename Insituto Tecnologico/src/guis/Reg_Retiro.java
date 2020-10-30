@@ -99,6 +99,7 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 		txtHora.setColumns(10);
 		
 		btnConsultar_Retiro = new JButton("Consultar");
+		btnConsultar_Retiro.addActionListener(this);
 		btnConsultar_Retiro.setBounds(425, 32, 89, 23);
 		getContentPane().add(btnConsultar_Retiro);
 		
@@ -120,10 +121,12 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 		getContentPane().add(comboBox);
 		
 		btnModificar_Retiro = new JButton("Modificar");
+		btnModificar_Retiro.addActionListener(this);
 		btnModificar_Retiro.setBounds(425, 53, 89, 23);
 		getContentPane().add(btnModificar_Retiro);
 		
 		btnEliminar_Retiro = new JButton("Eliminar");
+		btnEliminar_Retiro.addActionListener(this);
 		btnEliminar_Retiro.setBounds(425, 78, 89, 23);
 		getContentPane().add(btnEliminar_Retiro);
 		
@@ -137,10 +140,26 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnEliminar_Retiro) {
+			actionPerformedBtnEliminar_Retiro(e);
+		}
+		if (e.getSource() == btnModificar_Retiro) {
+			actionPerformedBtnModificar_Retiro(e);
+		}
+		if (e.getSource() == btnConsultar_Retiro) {
+			actionPerformedBtnConsultar_Retiro(e);
+		}
 		if (e.getSource() == btnAdicionar_Retiro) {
 			actionPerformedBtnAdicionar_Retiro(e);
 		}
 	}
 	protected void actionPerformedBtnAdicionar_Retiro(ActionEvent e) {
+		
+	}
+	protected void actionPerformedBtnConsultar_Retiro(ActionEvent e) {
+	}
+	protected void actionPerformedBtnModificar_Retiro(ActionEvent e) {
+	}
+	protected void actionPerformedBtnEliminar_Retiro(ActionEvent e) {
 	}
 }

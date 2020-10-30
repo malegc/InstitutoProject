@@ -1,0 +1,88 @@
+package guis;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Cons_AlumnoCursos extends JDialog implements ActionListener {
+	private JLabel lblCodigoAlumno;
+	private JTextField txtCodAlumno;
+	private JLabel lblCodigoCurso;
+	private JTextField txtCodCurso;
+	private JButton btnBuscar_AlumCurs;
+	private JScrollPane scrollPane;
+	private JTable tblAlumnoCursos;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Cons_AlumnoCursos dialog = new Cons_AlumnoCursos();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Cons_AlumnoCursos() {
+		setTitle("Consulta | Alumnos y cursos");
+		setBounds(100, 100, 550, 325);
+		getContentPane().setLayout(null);
+		
+		lblCodigoAlumno = new JLabel("Codigo Alumno");
+		lblCodigoAlumno.setBounds(10, 11, 71, 14);
+		getContentPane().add(lblCodigoAlumno);
+		
+		txtCodAlumno = new JTextField();
+		txtCodAlumno.setBounds(91, 8, 86, 20);
+		getContentPane().add(txtCodAlumno);
+		txtCodAlumno.setColumns(10);
+		
+		lblCodigoCurso = new JLabel("Codigo Curso");
+		lblCodigoCurso.setBounds(10, 36, 76, 14);
+		getContentPane().add(lblCodigoCurso);
+		
+		txtCodCurso = new JTextField();
+		txtCodCurso.setBounds(91, 33, 86, 20);
+		getContentPane().add(txtCodCurso);
+		txtCodCurso.setColumns(10);
+		
+		btnBuscar_AlumCurs = new JButton("Buscar");
+		btnBuscar_AlumCurs.addActionListener(this);
+		btnBuscar_AlumCurs.setBounds(421, 7, 103, 23);
+		getContentPane().add(btnBuscar_AlumCurs);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 61, 514, 214);
+		getContentPane().add(scrollPane);
+		
+		tblAlumnoCursos = new JTable();
+		scrollPane.setViewportView(tblAlumnoCursos);
+
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnBuscar_AlumCurs) {
+			actionPerformedBtnBuscar_Consultaa(e);
+		}
+	}
+	protected void actionPerformedBtnBuscar_Consultaa(ActionEvent e) {
+	}
+}

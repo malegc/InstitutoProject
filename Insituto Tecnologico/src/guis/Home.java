@@ -98,24 +98,44 @@ public class Home extends JFrame implements ActionListener {
 		menuBar.add(mnConsulta);
 		
 		mntmAlumnosCursos = new JMenuItem("Alumnos y cursos");
+		mntmAlumnosCursos.addActionListener(this);
 		mnConsulta.add(mntmAlumnosCursos);
 		
 		mntmMatrículasRetiros = new JMenuItem("Matr\u00EDculas y retiros");
+		mntmMatrículasRetiros.addActionListener(this);
 		mnConsulta.add(mntmMatrículasRetiros);
 		
 		mnReporte = new JMenu("Reporte");
 		menuBar.add(mnReporte);
 		
 		mntmAlmnMatriculaPendiente = new JMenuItem("Alumnos con matr\u00EDcula pendiente");
+		mntmAlmnMatriculaPendiente.addActionListener(this);
 		mnReporte.add(mntmAlmnMatriculaPendiente);
 		
 		mntmAlmnMatriculaVigente = new JMenuItem("Alumnos con matr\u00EDcula vigente");
+		mntmAlmnMatriculaVigente.addActionListener(this);
 		mnReporte.add(mntmAlmnMatriculaVigente);
 		
 		mntmAlmnMatriculadosPorCurso = new JMenuItem("Alumnos matriculados por curso");
+		mntmAlmnMatriculadosPorCurso.addActionListener(this);
 		mnReporte.add(mntmAlmnMatriculadosPorCurso);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmAlmnMatriculadosPorCurso) {
+			actionPerformedMntmAlmnMatriculadosPorCurso(e);
+		}
+		if (e.getSource() == mntmAlmnMatriculaVigente) {
+			actionPerformedMntmAlmnMatriculaVigente(e);
+		}
+		if (e.getSource() == mntmAlmnMatriculaPendiente) {
+			actionPerformedMntmAlmnMatriculaPendiente(e);
+		}
+		if (e.getSource() == mntmMatrículasRetiros) {
+			actionPerformedMntmMatrículasRetiros(e);
+		}
+		if (e.getSource() == mntmAlumnosCursos) {
+			actionPerformedMntmAlumnosCursos(e);
+		}
 		if (e.getSource() == mntmRetiro) {
 			actionPerformedMntmRetiro(e);
 		}
@@ -155,5 +175,30 @@ public class Home extends JFrame implements ActionListener {
 		Reg_Retiro rr = new Reg_Retiro();
 		rr.setLocationRelativeTo(this);
 		rr.setVisible(true);
+	}
+	protected void actionPerformedMntmAlumnosCursos(ActionEvent e) {
+		Cons_AlumnoCursos ca = new Cons_AlumnoCursos();
+		ca.setLocationRelativeTo(this);
+		ca.setVisible(true);
+	}
+	protected void actionPerformedMntmMatrículasRetiros(ActionEvent e) {
+		Cons_MatriculaRetiros cm = new Cons_MatriculaRetiros();
+		cm.setLocationRelativeTo(this);
+		cm.setVisible(true);
+	}
+	protected void actionPerformedMntmAlmnMatriculaPendiente(ActionEvent e) {
+		Repo_AlmnMatriculaPendiente rp = new Repo_AlmnMatriculaPendiente();
+		rp.setLocationRelativeTo(this);
+		rp.setVisible(true);
+	}
+	protected void actionPerformedMntmAlmnMatriculaVigente(ActionEvent e) {
+		Repo_AlmnMatriculaVigente rv = new Repo_AlmnMatriculaVigente();
+		rv.setLocationRelativeTo(this);
+		rv.setVisible(true);
+	}
+	protected void actionPerformedMntmAlmnMatriculadosPorCurso(ActionEvent e) {
+		Repo_AlmnMatriculadosPorCurso rc = new Repo_AlmnMatriculadosPorCurso();
+		rc.setLocationRelativeTo(this);
+		rc.setVisible(true);
 	}
 }
