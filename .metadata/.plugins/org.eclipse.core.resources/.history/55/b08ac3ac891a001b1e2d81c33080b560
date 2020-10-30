@@ -6,7 +6,7 @@ import javax.swing.JDialog;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class Repo_AlmnMatriculadosPorCurso extends JDialog {
+public class Repo_AlmnMatriculaVigente extends JDialog {
 	/**
 	 * 
 	 */
@@ -21,7 +21,7 @@ public class Repo_AlmnMatriculadosPorCurso extends JDialog {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Repo_AlmnMatriculadosPorCurso dialog = new Repo_AlmnMatriculadosPorCurso();
+					Repo_AlmnMatriculaVigente dialog = new Repo_AlmnMatriculaVigente();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				}
@@ -35,10 +35,9 @@ public class Repo_AlmnMatriculadosPorCurso extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public Repo_AlmnMatriculadosPorCurso() {
-		setModal(true);
+	public Repo_AlmnMatriculaVigente() {
 		setResizable(false);
-		setTitle("Reporte | Alumnos matriculados por curso");
+		setTitle("Reporte | Alumnos con matr\u00EDcula vigente");
 		setBounds(100, 100, 535, 380);
 		getContentPane().setLayout(null);
 		
@@ -50,4 +49,5 @@ public class Repo_AlmnMatriculadosPorCurso extends JDialog {
 		scrollPane.setViewportView(txtS);
 
 	}
+
 }

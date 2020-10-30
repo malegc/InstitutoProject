@@ -64,7 +64,6 @@ public class Man_Alumno extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public Man_Alumno() {
-		setModal(true);
 		setResizable(false);
 		setTitle("Mantenimiento | Alumno");
 		setBounds(100, 100, 535, 375);

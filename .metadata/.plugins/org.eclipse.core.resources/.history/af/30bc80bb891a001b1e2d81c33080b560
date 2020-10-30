@@ -63,7 +63,6 @@ public class Reg_Retiro extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public Reg_Retiro() {
-		setModal(true);
 		setTitle("Registro | Retiro");
 		setBounds(100, 100, 540, 375);
 		getContentPane().setLayout(null);

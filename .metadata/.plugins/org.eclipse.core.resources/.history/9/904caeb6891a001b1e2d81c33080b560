@@ -36,7 +36,6 @@ public class Repo_AlmnMatriculadosPorCurso extends JDialog {
 	 * Create the dialog.
 	 */
 	public Repo_AlmnMatriculadosPorCurso() {
-		setModal(true);
 		setResizable(false);
 		setTitle("Reporte | Alumnos matriculados por curso");
 		setBounds(100, 100, 535, 380);

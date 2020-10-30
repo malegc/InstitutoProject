@@ -36,8 +36,9 @@ public class Repo_AlmnMatriculaVigente extends JDialog {
 	 * Create the dialog.
 	 */
 	public Repo_AlmnMatriculaVigente() {
+		setModal(true);
 		setResizable(false);
-		setTitle("Reporte | Alumnos con matr\u00EDcula vigente:");
+		setTitle("Reporte | Alumnos con matr\u00EDcula vigente");
 		setBounds(100, 100, 535, 380);
 		getContentPane().setLayout(null);
 		

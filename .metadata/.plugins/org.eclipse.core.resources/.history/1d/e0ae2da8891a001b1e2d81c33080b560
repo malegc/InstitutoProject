@@ -63,7 +63,6 @@ public class Reg_Matricula extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public Reg_Matricula() {
-		setModal(true);
 		setResizable(false);
 		setTitle("Registro | Matricula");
 		setBounds(100, 100, 540, 375);

@@ -46,7 +46,6 @@ public class Cons_AlumnoCursos extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public Cons_AlumnoCursos() {
-		setModal(true);
 		setTitle("Consulta | Alumnos y cursos");
 		setBounds(100, 100, 550, 325);
 		getContentPane().setLayout(null);

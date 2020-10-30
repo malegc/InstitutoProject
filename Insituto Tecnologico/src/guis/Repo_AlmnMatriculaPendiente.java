@@ -36,8 +36,9 @@ public class Repo_AlmnMatriculaPendiente extends JDialog {
 	 * Create the dialog.
 	 */
 	public Repo_AlmnMatriculaPendiente() {
+		setModal(true);
 		setResizable(false);
-		setTitle("Reporte | Alumnos con matr\u00EDcula pendiente:");
+		setTitle("Reporte | Alumnos con matr\u00EDcula pendiente");
 		setBounds(100, 100, 535, 380);
 		getContentPane().setLayout(null);
 		

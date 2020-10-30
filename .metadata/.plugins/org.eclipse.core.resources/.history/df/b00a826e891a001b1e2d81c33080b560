@@ -44,7 +44,6 @@ public class Cons_MatriculaRetiros extends JDialog {
 	 * Create the dialog.
 	 */
 	public Cons_MatriculaRetiros() {
-		setModal(true);
 		setTitle("Consulta | Matr\u00EDculas y retiros");
 		setBounds(100, 100, 550, 325);
 		getContentPane().setLayout(null);
