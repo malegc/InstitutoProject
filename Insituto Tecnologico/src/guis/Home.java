@@ -156,5 +156,4 @@ public class Home extends JFrame implements ActionListener {
 		rr.setLocationRelativeTo(this);
 		rr.setVisible(true);
 	}
-	}
 }

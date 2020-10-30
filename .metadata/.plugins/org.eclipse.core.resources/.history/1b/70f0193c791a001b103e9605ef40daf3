@@ -1,0 +1,140 @@
+package guis;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Reg_Retiro extends JDialog implements ActionListener {
+	private JLabel lblCodigoRetiro;
+	private JTextField txtCodigoRetiro;
+	private JButton btnAdicionar_Retiro;
+	private JLabel lblFecha;
+	private JTextField txtFecha;
+	private JLabel lblHora;
+	private JTextField txtHora;
+	private JButton btnConsultar_Retiro;
+	private JLabel lblCodigoAlumno;
+	private JComboBox cboCodAlumno;
+	private JLabel lblCursoMatri;
+	private JComboBox comboBox;
+	private JButton btnModificar_Retiro;
+	private JButton btnEliminar_Retiro;
+	private JScrollPane scrollPane;
+	private JTable tblRetiro;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Reg_Retiro dialog = new Reg_Retiro();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Reg_Retiro() {
+		setTitle("Registro | Retiro");
+		setBounds(100, 100, 540, 375);
+		getContentPane().setLayout(null);
+		
+		lblCodigoRetiro = new JLabel("Codigo");
+		lblCodigoRetiro.setBounds(10, 11, 46, 14);
+		getContentPane().add(lblCodigoRetiro);
+		
+		txtCodigoRetiro = new JTextField();
+		txtCodigoRetiro.setEditable(false);
+		txtCodigoRetiro.setBounds(76, 5, 86, 20);
+		getContentPane().add(txtCodigoRetiro);
+		txtCodigoRetiro.setColumns(10);
+		
+		btnAdicionar_Retiro = new JButton("Adicionar");
+		btnAdicionar_Retiro.addActionListener(this);
+		btnAdicionar_Retiro.setBounds(425, 7, 89, 23);
+		getContentPane().add(btnAdicionar_Retiro);
+		
+		lblFecha = new JLabel("Fecha");
+		lblFecha.setBounds(10, 36, 46, 14);
+		getContentPane().add(lblFecha);
+		
+		txtFecha = new JTextField();
+		txtFecha.setEditable(false);
+		txtFecha.setBounds(76, 30, 86, 20);
+		getContentPane().add(txtFecha);
+		txtFecha.setColumns(10);
+		
+		lblHora = new JLabel("Hora");
+		lblHora.setBounds(172, 33, 23, 14);
+		getContentPane().add(lblHora);
+		
+		txtHora = new JTextField();
+		txtHora.setEditable(false);
+		txtHora.setBounds(205, 30, 86, 20);
+		getContentPane().add(txtHora);
+		txtHora.setColumns(10);
+		
+		btnConsultar_Retiro = new JButton("Consultar");
+		btnConsultar_Retiro.setBounds(425, 32, 89, 23);
+		getContentPane().add(btnConsultar_Retiro);
+		
+		lblCodigoAlumno = new JLabel("Cod. Alumno");
+		lblCodigoAlumno.setBounds(10, 57, 61, 14);
+		getContentPane().add(lblCodigoAlumno);
+		
+		cboCodAlumno = new JComboBox();
+		cboCodAlumno.setBounds(76, 53, 86, 22);
+		getContentPane().add(cboCodAlumno);
+		
+		lblCursoMatri = new JLabel("Curso");
+		lblCursoMatri.setBounds(10, 82, 46, 14);
+		getContentPane().add(lblCursoMatri);
+		
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Matem\u00E1tica II", "Base de Datos"}));
+		comboBox.setBounds(76, 78, 119, 22);
+		getContentPane().add(comboBox);
+		
+		btnModificar_Retiro = new JButton("Modificar");
+		btnModificar_Retiro.setBounds(425, 53, 89, 23);
+		getContentPane().add(btnModificar_Retiro);
+		
+		btnEliminar_Retiro = new JButton("Eliminar");
+		btnEliminar_Retiro.setBounds(425, 78, 89, 23);
+		getContentPane().add(btnEliminar_Retiro);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 107, 504, 218);
+		getContentPane().add(scrollPane);
+		
+		tblRetiro = new JTable();
+		scrollPane.setViewportView(tblRetiro);
+
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnAdicionar_Retiro) {
+			actionPerformedBtnAdicionar_Retiro(e);
+		}
+	}
+	protected void actionPerformedBtnAdicionar_Retiro(ActionEvent e) {
+	}
+}
